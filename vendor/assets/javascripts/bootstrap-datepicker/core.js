@@ -1600,8 +1600,6 @@
 				return;
 			this.updating = true;
 
-      console.log('hola')
-
 			var dp = $(e.target).data('datepicker');
 
 			if (typeof(dp) === "undefined") {
@@ -1621,13 +1619,13 @@
 					p.setUTCDate(new_date);
 			});
 
-			if (new_date < this.dates[j]){
+			if (new_date < this.dates[j] && e.target.value.length > 9){
 				// Date being moved earlier/left
 				while (j >= 0 && new_date < this.dates[j]){
 					this.pickers[j--].setUTCDate(new_date);
 				}
 			}
-			else if (new_date > this.dates[k]){
+			else if (new_date > this.dates[k] && e.target.value.length > 9){
 				// Date being moved later/right
 				while (k < l && new_date > this.dates[k]){
 					this.pickers[k++].setUTCDate(new_date);
