@@ -1600,6 +1600,8 @@
 				return;
 			this.updating = true;
 
+      console.log('hola')
+
 			var dp = $(e.target).data('datepicker');
 
 			if (typeof(dp) === "undefined") {
